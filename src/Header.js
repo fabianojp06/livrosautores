@@ -1,4 +1,5 @@
 import React from 'react';
+import LinkWrapper from './LinkWrapper';
 
 const Header = () =>{
     return (
@@ -6,9 +7,9 @@ const Header = () =>{
                 <div className="nav-wrapper indigo lighten-2">
                     <a href="/" className="brand-logo ml-3">Casa do Código</a>
                     <ul id="nav-mobile" className="right">
-                        <li><a href="/autores">Autores</a></li>
-                        <li><a href="/livros">Livros</a></li>
-                        <li><a href="/sobre">Sobre</a></li>
+                        <li><LinkWrapper to='/Autores'>Autores</LinkWrapper></li>
+                        <li><LinkWrapper to='/Livros'>Livros</LinkWrapper></li>
+                        <li><LinkWrapper to='/Sobre'>Sobre</LinkWrapper></li>
                     </ul>
                 </div>
             </nav>

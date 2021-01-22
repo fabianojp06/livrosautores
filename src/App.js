@@ -5,6 +5,7 @@ import Tabela from './Tabela';
 import Formulario from './Formulario';
 import Header from './Header';
 import PopUp from './PopUp';
+//import router from 'react-router-dom';
 
 
 class App extends Component {
@@ -52,11 +53,16 @@ class App extends Component {
     PopUp.exibeMensagem("success", "Autor adicionado com sucesso");
   }
   render() {
+
+    fetch('http://localhost:8000/api/autor')
+      .then(res => res.json())
+      .then(res => console.log(res.data))
+
     return (
       <Fragment>
         <Header />
         <div className="container mb-10">
-          <h1>Casa do código</h1>
+          <h1>Cadastre o livro</h1>
           <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
           <Formulario escutadorDeSubmit={this.escutadorDeSubmit} />
         </div>
